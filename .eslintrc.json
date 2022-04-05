@@ -1,0 +1,21 @@
+{
+    "extends": "standard-with-typescript",
+    "parserOptions": {
+      "project": "./tsconfig.json",
+      "warnOnUnsupportedTypeScriptVersion": false
+    },
+    "rules": {
+      "no-new": "off",
+      "no-useless-catch": "off",
+      "@typescript-eslint/lines-between-class-members": "off",
+      "@typescript-eslint/prefer-readonly": "off",
+      "@typescript-eslint/strict-boolean-expressions": "off",
+      "@typescript-eslint/no-non-null-assertion": "off",
+      "@typescript-eslint/no-invalid-void-type": "off",
+      "@typescript-eslint/no-misused-promises": "off",
+      "@typescript-eslint/restrict-template-expressions": "off",
+      "@typescript-eslint/return-await": "off",
+      "@typescript-eslint/prefer-function-type": "off"
+      }
+  }
+  
