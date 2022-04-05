@@ -1,6 +1,6 @@
 import BaseTrigger from './baseTrigger'
 
-class RentalVehicle extends BaseTrigger {
+class RentVehicle extends BaseTrigger {
   public id!: number
   public UserId!: number
   public VehicleId!: number
@@ -8,8 +8,8 @@ class RentalVehicle extends BaseTrigger {
   public updated_at!: Date
 
   public static get tableName (): string {
-    return 'RentalVehicles'
+    return 'RentVehicles'
   }
 }
 
-export default RentalVehicle
+export default RentVehicle
