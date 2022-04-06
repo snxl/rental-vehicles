@@ -9,3 +9,16 @@ export function getValidVehicle (): Vehicle {
 
   return vehicle
 }
+
+export function getArrayVehicle (): Vehicle[] {
+  const vehicle: Vehicle[] = []
+
+  const vehicleOne = new Vehicle()
+  vehicleOne.id = 1
+  vehicleOne.name = 'test'
+  vehicleOne.brand = 'test brand'
+  vehicleOne.year = new Date()
+  vehicle.push(vehicleOne)
+
+  return vehicle
+}
