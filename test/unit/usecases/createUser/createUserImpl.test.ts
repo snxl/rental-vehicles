@@ -1,3 +1,6 @@
+import HashClient from '@src/domain/clients/hashClient'
+import JsonWebTokenClient from '@src/domain/clients/jsonWebTokenClient'
+import UserRepo from '@src/domain/repositories/userRepo'
 import CreateUserImpl from '@src/domain/usecases/createUser/createUserImpl'
 import AppError from '@src/shared/helpers/errors/appErrors'
 import FakeHashClient from '@test/fakes/clients/fakeHashClient'
@@ -7,9 +10,9 @@ import crypto from 'crypto'
 
 describe('Test class CreateUserImpl', () => {
   let createUserImpl: CreateUserImpl
-  let fakeUserRepo: FakeUserRepo
-  let fakeHashClient: FakeHashClient
-  let fakeJsonWebTokenClient: FakeJsonWebTokenClient
+  let fakeUserRepo: UserRepo
+  let fakeHashClient: HashClient
+  let fakeJsonWebTokenClient: JsonWebTokenClient
 
   const randString = crypto.randomBytes(8).toString('hex')
   const inputDefault = {
