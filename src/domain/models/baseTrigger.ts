@@ -1,7 +1,7 @@
 import { ModelOptions, QueryContext } from 'objection'
 import Model from '@src/shared/config/knex'
 
-class BaseTrigger extends Model {
+abstract class BaseTrigger extends Model {
   public created_at!: Date
   public updated_at!: Date
 

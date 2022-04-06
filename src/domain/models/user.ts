@@ -5,8 +5,6 @@ class User extends BaseTrigger {
   public name!: string
   public email!: string
   public password!: string
-  public created_at!: Date
-  public updated_at!: Date
 
   public static get tableName (): string {
     return 'Users'
