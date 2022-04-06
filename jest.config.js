@@ -33,7 +33,7 @@ module.exports = {
     '<rootDir>/src/application/controllers/**/*Controller.ts'
   ],
   coverageDirectory: 'coverage',
-  reporters: ['default', 'jest-sonar']
+  reporters: ['default']
   // coverageReporters: [
   //   'text-summary',
   //   'lcov'
