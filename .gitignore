@@ -93,3 +93,5 @@ dist
 
 .vscode/*
 .idea/*
+
+.pgdata
