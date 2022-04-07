@@ -18,7 +18,7 @@ class UserLoginImpl {
       throw new AppError('User does not exists', 404)
     }
 
-    const passwordIsValid = await this.hashClient.verify(input.password)
+    const passwordIsValid = await this.hashClient.verify(input.password, findUser.password)
 
     if (!passwordIsValid) {
       throw new AppError('Password does not valid', 400)

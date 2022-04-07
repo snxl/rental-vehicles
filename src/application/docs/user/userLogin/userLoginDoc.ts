@@ -1,16 +1,12 @@
 import input from './input'
 import example from './example'
-import { output201, output400 } from './output'
+import { output201, output400, output404 } from './output'
 
 const infos = {
   tags: ['user'],
-  summary: 'Create user',
-  description: 'Create and return user token'
+  summary: 'User login',
+  description: 'Login and return user token'
 }
-
-// const security = [
-//   { bearerAuth: [] }
-// ]
 
 const requestBody = {
   content: {
@@ -21,7 +17,7 @@ const requestBody = {
   }
 }
 
-const res201 = {
+const res200 = {
   description: 'Success',
   content: {
     'application/json': {
@@ -39,13 +35,23 @@ const res400 = {
   }
 }
 
+const res404 = {
+  description: 'Error',
+  content: {
+    'application/json': {
+      schema: output404
+    }
+  }
+}
+
 export default {
   post: {
     ...infos,
     requestBody,
     responses: {
-      201: res201,
-      400: res400
+      200: res200,
+      400: res400,
+      404: res404
     }
   }
 }

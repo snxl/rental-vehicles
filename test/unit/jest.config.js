@@ -11,7 +11,7 @@ module.exports = {
     collectCoverage: true,
     collectCoverageFrom: [
       '<rootDir>/src/domain/usecases/**/*.ts',
-      '<rootDir>/src/application/controllers/**/*Schema.ts',
+      '<rootDir>/src/application/controller/**/*Schema.ts',
       '!<rootDir>/src/application/controllers/**/*Controller.ts'
     ]
   }
