@@ -29,6 +29,10 @@ class FakeRentVehicleRepo implements RentVehicleRepo {
 
     return rentVehicle
   }
+
+  public async deleteRentalVehicle (id: number): Promise<RentVehicle> {
+    return new RentVehicle()
+  }
 }
 
 export default FakeRentVehicleRepo
