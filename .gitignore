@@ -94,4 +94,4 @@ dist
 .vscode/*
 .idea/*
 
-.pgdata
+.docker/.pgdata

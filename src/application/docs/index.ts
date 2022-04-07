@@ -1,3 +1,5 @@
+import user from './user'
+
 export default {
   openapi: '3.0.0',
   info: {
@@ -6,7 +8,7 @@ export default {
     version: '1.0.0'
   },
   paths: {
-
+    ...user
   },
   components: {
     securitySchemes: {
@@ -14,11 +16,6 @@ export default {
         type: 'http',
         scheme: 'Bearer',
         bearerFormat: 'JWT'
-      },
-      apiKey: {
-        type: 'apiKey',
-        in: 'header',
-        name: 'authorization'
       }
     }
   }

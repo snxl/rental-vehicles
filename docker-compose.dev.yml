@@ -7,7 +7,9 @@ services:
     restart: always
     tty: true
     volumes:
-      - .pgdata:/var/lib/postgresql/data
+      - .docker/.pgdata:/var/lib/postgresql/data
+      - .docker/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - .docker/create-tables.sql:/docker-entrypoint-initdb.d/create-tables.sql
     environment:
       - POSTGRES_PASSWORD=root
       - POSTGRES_DB=rental-vehicles

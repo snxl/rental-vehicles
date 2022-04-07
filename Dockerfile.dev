@@ -28,8 +28,8 @@ WORKDIR /usr/app
 COPY --from=file-copy /usr/app ./
 
 ENV NODE_ENV=development
-ENV PORT=8080
-EXPOSE 8080
+ENV PORT=3333
+EXPOSE 3333
 
 ENTRYPOINT [ "npm", "run" ]
 CMD [ "dev" ]

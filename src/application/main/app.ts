@@ -34,13 +34,12 @@ class App {
     }))
 
     this.server.get('/admin/favicon.ico', (req, res) => res.status(204))
-
     this.server.use(express.json())
     this.server.use(express.urlencoded({ extended: true }))
     this.server.use(httpContext.middleware)
 
     if (process.env.NODE_ENV !== 'production') {
-      this.server.use('/admin/api-docs', noCache, serve, setup(swaggerConfig))
+      this.server.use('/rental-vehicles/api-docs', noCache, serve, setup(swaggerConfig))
     }
 
     this.server.use(responseTime)
