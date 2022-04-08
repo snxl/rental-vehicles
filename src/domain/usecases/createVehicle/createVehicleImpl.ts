@@ -21,7 +21,10 @@ class CreateVehicleImpl {
     const createVehicle = await this.vehicleRepo.create(vehicle)
 
     return {
-      ...createVehicle
+      id: createVehicle.id,
+      brand: createVehicle.brand,
+      name: createVehicle.name,
+      year: createVehicle.year
     }
   }
 }

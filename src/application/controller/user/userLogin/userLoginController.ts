@@ -20,7 +20,7 @@ class UserLoginController {
 
     const output = await createUserImpl.run(request.body)
 
-    return response.status(201).json({ status: 'success', data: output })
+    return response.status(200).json({ status: 'success', data: output })
   }
 }
 

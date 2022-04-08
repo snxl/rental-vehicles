@@ -1,4 +1,5 @@
 import user from './user'
+import vehicle from './vehicle'
 
 export default {
   openapi: '3.0.0',
@@ -8,7 +9,8 @@ export default {
     version: '1.0.0'
   },
   paths: {
-    ...user
+    ...user,
+    ...vehicle
   },
   components: {
     securitySchemes: {
