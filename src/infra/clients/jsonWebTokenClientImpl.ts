@@ -1,5 +1,4 @@
-import JsonWebTokenClient from '@src/domain/clients/jsonWebTokenClient'
-import User from '@src/domain/models/user'
+import JsonWebTokenClient, { token } from '@src/domain/clients/jsonWebTokenClient'
 import keys from '@src/shared/config/keys'
 import jwt from 'jsonwebtoken'
 
@@ -18,13 +17,13 @@ class JsonWebTokenClientImpl implements JsonWebTokenClient {
     })
   }
 
-  public async verify (token: string, secret: string): Promise<User> {
-    return new Promise<User>((resolve, reject) => {
+  public async verify (token: string, secret: string): Promise<token> {
+    return new Promise<token>((resolve, reject) => {
       jwt.verify(token, secret, (err, payload) => {
         if (err) {
           reject(err)
         } else {
-          resolve(payload as User)
+          resolve(payload as token)
         }
       })
     })

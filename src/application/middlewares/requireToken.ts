@@ -13,7 +13,7 @@ async function requireToken (request: Request, response: Response, next: NextFun
   try {
     const verifyToken = await new JsonWebTokenClientImpl().verify(token, keys.SECRET_TOKEN!)
 
-    request.userId = verifyToken.id
+    request.userId = verifyToken.userId
 
     next()
   } catch (error) {

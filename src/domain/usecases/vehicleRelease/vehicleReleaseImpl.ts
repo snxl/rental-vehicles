@@ -9,7 +9,7 @@ class VehicleReleaseImpl {
 
   public async run (input: Input): Promise<Output> {
     const findRentalVehicle = await this.rentVehicleRepo.findByUserId(input.userId)
-    if (!findRentalVehicle) {
+    if (!findRentalVehicle.length) {
       throw new AppError('No rental vehicle found', 404)
     }
 

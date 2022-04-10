@@ -8,7 +8,7 @@ class VehicleRepoImpl implements VehicleRepo {
       .returning(['*'])
   }
 
-  public async listAll (limit: number, offset: number): Promise<Vehicle[] | undefined> {
+  public async listAll (limit: number, offset: number): Promise<Vehicle[] | []> {
     offset = (offset - 1) * limit
 
     return Vehicle.query()

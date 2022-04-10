@@ -34,7 +34,7 @@ describe('Test class VehicleReleaseImpl', () => {
     expect.assertions(3)
 
     try {
-      rentVehicleRepo.findByUserId = jest.fn(async () => undefined)
+      rentVehicleRepo.findByUserId = jest.fn(async () => [])
 
       await vehicleReleaseImpl.run({ userId: 1 })
     } catch (error) {

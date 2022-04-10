@@ -1,10 +1,20 @@
 import input from './input'
-import { output200, output404 } from './output'
+import example from './example'
+import { output200, output400 } from './output'
 
 const infos = {
   tags: ['vehicle'],
-  summary: 'List all vehicles',
-  description: 'Register a vehicle in the database'
+  summary: 'Rent vehicle',
+  description: 'Rent vehicle from database'
+}
+
+const requestBody = {
+  content: {
+    'application/json': {
+      schema: input,
+      example
+    }
+  }
 }
 
 const res200 = {
@@ -16,11 +26,11 @@ const res200 = {
   }
 }
 
-const res404 = {
+const res400 = {
   description: 'Error',
   content: {
     'application/json': {
-      schema: output404
+      schema: output400
     }
   }
 }
@@ -30,12 +40,12 @@ const security = [
 ]
 
 export default {
-  get: {
+  post: {
     ...infos,
-    ...input,
+    requestBody,
     responses: {
       200: res200,
-      404: res404
+      400: res400
     },
     security
   }

@@ -10,12 +10,12 @@ class RentVehicleImpl {
 
   public async run (input: Input): Promise<Output> {
     const checkUserDoesNotARented = await this.rentVehicleRepo.findByUserId(input.userId)
-    if (checkUserDoesNotARented) {
+    if (checkUserDoesNotARented.length) {
       throw new AppError('User already has a rented vehicle', 400)
     }
 
     const checkVehicleIsInUse = await this.rentVehicleRepo.findByVehicleId(input.vehicleId)
-    if (checkVehicleIsInUse) {
+    if (checkVehicleIsInUse.length) {
       throw new AppError('Vehicle is currently in use', 400)
     }
 

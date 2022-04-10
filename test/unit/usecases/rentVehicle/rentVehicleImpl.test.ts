@@ -25,8 +25,8 @@ describe('Test class RentVehicleImpl', () => {
     const input = { ...defaultInput }
     const rentVehicle = getValidRentVehicle()
 
-    rentVehicleRepo.findByUserId = jest.fn(async () => undefined)
-    rentVehicleRepo.findByVehicleId = jest.fn(async () => undefined)
+    rentVehicleRepo.findByUserId = jest.fn(async () => [])
+    rentVehicleRepo.findByVehicleId = jest.fn(async () => [])
 
     const spy = jest.spyOn(rentVehicleRepo, 'create')
     spy.mockResolvedValueOnce(rentVehicle)
@@ -49,7 +49,7 @@ describe('Test class RentVehicleImpl', () => {
     expect.assertions(3)
 
     try {
-      rentVehicleRepo.findByUserId = jest.fn(async () => undefined)
+      rentVehicleRepo.findByUserId = jest.fn(async () => [])
 
       await rentVehicleImpl.run(input)
     } catch (error) {

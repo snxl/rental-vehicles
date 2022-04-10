@@ -2,7 +2,7 @@ import RentVehicle from '@src/domain/models/rentVehicle'
 import RentVehicleRepo from '@src/domain/repositories/rentVehicleRepo'
 
 class FakeRentVehicleRepo implements RentVehicleRepo {
-  public async findByUserId (id: number): Promise<RentVehicle[] | undefined> {
+  public async findByUserId (id: number): Promise<RentVehicle[] | []> {
     const rentVehicle: RentVehicle[] = []
 
     const rentVehicleEntity = new RentVehicle()
@@ -18,7 +18,7 @@ class FakeRentVehicleRepo implements RentVehicleRepo {
     return new RentVehicle()
   }
 
-  public async findByVehicleId (id: number): Promise<RentVehicle[] | undefined> {
+  public async findByVehicleId (id: number): Promise<RentVehicle[] | []> {
     const rentVehicle: RentVehicle[] = []
 
     const rentVehicleEntity = new RentVehicle()
