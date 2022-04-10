@@ -17,6 +17,10 @@ const requestBody = {
   }
 }
 
+const security = [
+  { bearerAuth: [] }
+]
+
 const res201 = {
   description: 'Success',
   content: {
@@ -42,6 +46,7 @@ export default {
     responses: {
       201: res201,
       400: res400
-    }
+    },
+    security
   }
 }

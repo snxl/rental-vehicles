@@ -8,10 +8,6 @@ const infos = {
   description: 'Create and return user token'
 }
 
-// const security = [
-//   { bearerAuth: [] }
-// ]
-
 const requestBody = {
   content: {
     'application/json': {

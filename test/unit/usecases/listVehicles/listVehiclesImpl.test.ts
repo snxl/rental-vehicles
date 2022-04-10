@@ -47,7 +47,7 @@ describe('Test class ListVehiclesImpl', () => {
     const output = await listVehiclesImpl.run(input)
 
     expect(output.vehicles).toEqual(arrayOfVehicle)
-    expect(spy).toBeCalledWith(50, 0)
+    expect(spy).toBeCalledWith(50, 1)
   })
 
   it('should return no vehicle found', async () => {
@@ -56,7 +56,7 @@ describe('Test class ListVehiclesImpl', () => {
     expect.assertions(3)
 
     try {
-      vehicleRepo.listAll = jest.fn(async () => undefined)
+      vehicleRepo.listAll = jest.fn(async () => [])
 
       await listVehiclesImpl.run(input)
     } catch (error) {

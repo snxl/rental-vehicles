@@ -13,12 +13,12 @@ class ListVehiclesImpl {
     }
 
     if (!input.offset) {
-      input.offset = 0
+      input.offset = 1
     }
 
     const listVehicle = await this.vehicleRepo.listAll(input.limit, input.offset)
 
-    if (!listVehicle) {
+    if (!listVehicle.length) {
       throw new AppError('No vehicle found', 404)
     }
 
