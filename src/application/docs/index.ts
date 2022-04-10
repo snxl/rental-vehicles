@@ -4,7 +4,7 @@ import vehicle from './vehicle'
 export default {
   openapi: '3.0.0',
   info: {
-    title: 'ms_vehicle_booking',
+    title: 'ms_rental_vehicles',
     description: 'Documentação de rotas do microserviço',
     version: '1.0.0'
   },
